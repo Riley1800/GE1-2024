@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca3daw6du1ysr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7hsnp"]
+size = Vector2(100, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xhaq"]
+size = Vector3(50, 50, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v5sxb"]
+size = Vector3(20, 1, 20)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_7hsnp")
+
+[node name="Player" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_0xhaq")
+
+[node name="Turret" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("BoxMesh_v5sxb")

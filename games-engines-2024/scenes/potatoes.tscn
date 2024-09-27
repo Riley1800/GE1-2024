@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca3daw6du1ysr"]
+[gd_scene load_steps=7 format=3 uid="uid://ca3daw6du1ysr"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_p3jpu"]
+[ext_resource type="Script" path="res://scenes/wall.gd" id="2_vo7qy"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7hsnp"]
 size = Vector2(100, 100)
 
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_jsgi8"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_0xhaq"]
+material = SubResource("ORMMaterial3D_jsgi8")
 size = Vector3(50, 50, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v5sxb"]
@@ -16,6 +22,16 @@ mesh = SubResource("PlaneMesh_7hsnp")
 
 [node name="Player" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_0xhaq")
+script = ExtResource("1_p3jpu")
+speed = null
+rot_speed = null
 
 [node name="Turret" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("BoxMesh_v5sxb")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Wall" type="Node3D" parent="."]
+script = ExtResource("2_vo7qy")

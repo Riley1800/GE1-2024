@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd66b3fg0uwok"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_o8bi4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_08frp"]
+
+[node name="Bullet" type="CharacterBody3D"]
+script = ExtResource("1_o8bi4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_08frp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

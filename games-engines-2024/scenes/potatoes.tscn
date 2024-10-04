@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2cnv7v7huh3k"]
+[gd_scene load_steps=13 format=3 uid="uid://d2cnv7v7huh3k"]
 
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://green.tres" id="1_ljfv3"]
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_rpqah"]
@@ -15,6 +15,12 @@ size = Vector2(100, 100)
 [sub_resource type="BoxMesh" id="BoxMesh_dedr2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q7xvw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fh8fi"]
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_olc2i"]
+size = Vector3(0.1, 0.1, 1)
 
 [node name="root" type="Node3D"]
 
@@ -45,6 +51,8 @@ shape = SubResource("WorldBoundaryShape3D_cslip")
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("3_1hidi")
+speed = null
+rot_speed = null
 
 [node name="player" type="MeshInstance3D" parent="player"]
 transform = Transform3D(0.651913, 0, -0.758294, 0, 1, 0, 0.758294, 0, 0.651913, 0, 0.5, 0)
@@ -57,5 +65,16 @@ shape = SubResource("BoxShape3D_q7xvw")
 
 [node name="Marker3D" type="Marker3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97723, 0, 0.0360591)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0240393, 0, 0.68512)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120196, 0.889453, 0)
+mesh = SubResource("BoxMesh_fh8fi")
+surface_material_override/0 = ExtResource("2_cp1av")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player/StaticBody3D"]
+shape = SubResource("BoxShape3D_olc2i")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

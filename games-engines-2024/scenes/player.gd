@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	var r = Input.get_axis("turn_left", "turn_right")
 	
-	rotate_y(- deg_to_rad(rot_speed) * r * delta)
+	rotate_y(-deg_to_rad(rot_speed) * r * delta)
 	#ranslate(Vector3(0, 0, f * delta * speed))
 	# rotate_y()
 	# rotate_y(deg_to_rad(rot_speed) * delta)

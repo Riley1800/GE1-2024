@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	var f = acos(d)
 	
 	DebugDraw2D.set_text("DOT: ", d)
-	DebugDraw2D.set_text("", f)
+	DebugDraw2D.set_text("f:", rad_to_deg(f))
 	
 	rotate(Vector3.DOWN, deg_to_rad(relative.x * deg_to_rad(rot_speed) * delta))
 	

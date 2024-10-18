@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6mvjb3uomx1w"]
+[gd_scene load_steps=16 format=3 uid="uid://c6mvjb3uomx1w"]
 
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_cyi0i"]
 [ext_resource type="Script" path="res://scenes/wall.gd" id="2_mdsel"]
@@ -23,6 +23,8 @@ size = Vector3(0.1, 0.1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yo8sf"]
 size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2xsbx"]
 
 [node name="root" type="Node3D"]
 
@@ -95,3 +97,4 @@ elements = 22
 brick_size = 1.0
 
 [node name="Enemy" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2xsbx")

@@ -54,12 +54,13 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_307sh")
 
-[node name="tank" type="CharacterBody3D" parent="." node_paths=PackedStringArray("bullet_spawn")]
+[node name="tank" type="CharacterBody3D" parent="." node_paths=PackedStringArray("bullet_spawn", "enemy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("5_346y1")
 speed = 10.0
 bullet_scene = ExtResource("6_l8cd5")
 bullet_spawn = NodePath("bullet_spawn")
+enemy = NodePath("../Enemy")
 
 [node name="player" type="MeshInstance3D" parent="tank"]
 material_override = ExtResource("7_vw473")

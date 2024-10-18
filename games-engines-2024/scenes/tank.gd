@@ -69,9 +69,8 @@ func _physics_process(delta: float) -> void:
 @export var enemy:Node3D
 
 func _process(delta: float) -> void:
-	var e = $"../enemy"
 	
-	var toEnemy:Vector3 = e.global_position - global_position
+	var toEnemy:Vector3 = enemy.global_position - global_position
 	
 	toEnemy = toEnemy.normalized()
 	

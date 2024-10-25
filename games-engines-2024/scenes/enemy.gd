@@ -29,13 +29,8 @@ func _ready() -> void:
 	
 	theta = acos(to_player.dot(forw))
 	axis = axis.normalized()
-	"""
-	DebugDraw2D.set_text("angle to the player", rad_to_deg(theta))
 	
-	DebugDraw2D.set_text("axis", axis)
 	
-	rotation = Vector3(0, -theta, 0)
-	"""
 	q2 = Quaternion(- axis, theta)
 	q1 = global_basis.get_rotation_quaternion()
 	t = 0
@@ -45,26 +40,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	"""
-	to_player = tank.global_position - global_position
-	to_player = to_player.normalized()
-	
-	forw = global_transform.basis.z
-	
-	DebugDraw3D.draw_arrow(global_position, global_position + forw * 5, Color.AQUA, 0.1)
-	DebugDraw2D.set_text("enemy_to_player", to_player)
-	DebugDraw2D.set_text("forw", forw)
-	
-	axis = to_player.cross(forw)
-	
-	theta = acos(to_player.dot(forw))
-	
-	DebugDraw2D.set_text("angle to the player", rad_to_deg(theta))
-	
-	DebugDraw2D.set_text("axis", axis)
-	
-	rotation = Vector3(0, -theta, 0)
-	"""
 	
 	var q:Quaternion
 	

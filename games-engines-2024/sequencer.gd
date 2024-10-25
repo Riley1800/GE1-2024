@@ -103,6 +103,7 @@ func load_samples():
 				# var name = arr[arr.size()-1].split('.')[0]
 				# samples[name] = asp
 			
+
 				var stream = load(path_str + "/" + file_name)
 				stream.resource_name = file_name
 				samples.push_back(stream)

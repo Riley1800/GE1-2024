@@ -8,7 +8,8 @@ extends CSGCylinder3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	var desired = sqrt(global_position.y)
+	var desired = sqrt(global_position.y / (0.5 * abs(gravity.y)))
+	print(desired)
 	
 	pass # Replace with function body.
 

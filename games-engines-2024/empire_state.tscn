@@ -14,10 +14,10 @@ size = Vector2(100, 100)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_qv2i2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="Ground" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_mwihp")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="Tower" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 190, 0)
 size = Vector3(1, 380, 1)
 

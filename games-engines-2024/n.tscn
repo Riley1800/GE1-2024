@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpbeveox1aoib"]
+
+[ext_resource type="Script" path="res://terrain_tile.gd" id="1_i4qtn"]
+[ext_resource type="Script" path="res://FPController.gd" id="2_g8nru"]
+
+[node name="SingleTerrainTile" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("1_i4qtn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("2_g8nru")

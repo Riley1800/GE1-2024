@@ -44,6 +44,7 @@ func generate_world_around_player():
 			var obj = old_game_objects.pop_front()
 			obj.queue_free()
 			
+		#var tile_width = quads_per_tile * width_cale
 		if abs(x_move) >= quads_per_tile or abs(z_move) >= quads_per_tile:
 			var update_time = Time.get_ticks_msec() / 1000.0
 			

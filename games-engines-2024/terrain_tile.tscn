@@ -7,6 +7,7 @@
 script = ExtResource("1_d16af")
 quads_per_tile = 20
 height_scale = 20.0
+width_scale = 1.0
 perlin_scale = 0.05
 speed = 100.0
 material = ExtResource("2_hq5vq")

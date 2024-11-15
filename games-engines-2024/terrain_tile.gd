@@ -79,6 +79,8 @@ func create_mesh():
 	# We might not need generate_normals() anymore since we're setting them manually
 	# st.generate_normals()
 	st.generate_normals()
+	
+	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	current_mesh = st.commit()
 
 func noise_2d(x: float, y: float) -> float:

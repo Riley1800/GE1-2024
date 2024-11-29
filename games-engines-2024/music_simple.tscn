@@ -1,3 +1,47 @@
-[gd_scene format=3 uid="uid://b5m2c51p6isp8"]
+[gd_scene load_steps=4 format=3 uid="uid://b5m2c51p6isp8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qcrql"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jpxkh"]
+radius = 0.05
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yx1ug"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="Left" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftArea3D" type="Area3D" parent="XROrigin3D/Left"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/Left/LeftArea3D"]
+mesh = SubResource("SphereMesh_qcrql")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/Left/LeftArea3D"]
+shape = SubResource("SphereShape3D_jpxkh")
+
+[node name="Right" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightArea3D" type="Area3D" parent="XROrigin3D/Right"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/Right/RightArea3D"]
+mesh = SubResource("SphereMesh_qcrql")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/Right/RightArea3D"]
+shape = SubResource("SphereShape3D_jpxkh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_yx1ug")
